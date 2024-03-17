@@ -19,6 +19,7 @@
 <div class="d-grid gap-4 d-md-block">
 
 <a class="nav-link" href="Home.jsp"><button  class="btn btn-secondary" type="button" data-bs-toggle="popover">HOME</button></a>
+<br><a class="nav-link" href="staffLoginsuccess.jsp"><button  class="btn btn-secondary" type="button" data-bs-toggle="popover">BACK</button></a>
 
 </div>
 <div = "container">
@@ -80,7 +81,8 @@
 <p style="  padding :30px";>
 <hr>
 <footer>
-  <p >C.H.WEDAGEDARA @ 2024</p>
+  <p >Copyright @ 2024-ABC Lab
+</p>
 </footer>
 <style>
 footer {

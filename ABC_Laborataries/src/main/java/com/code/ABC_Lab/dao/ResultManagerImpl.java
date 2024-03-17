@@ -3,6 +3,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashMap;
 
 import com.code.ABC_Lab.dao.dbutils.DbDriverManager;
 import com.code.ABC_Lab.dao.dbutils.DbDriverManagerFactory;
@@ -61,7 +62,6 @@ public ResultManagerImpl() {
 		while(rs.next())
 		{
 			result2.setPatientName(rs.getString("patientName"));
-			//result.setTestRefno(rs.getInt("testRefno"));
 			result2.setTestCode(rs.getInt("testCode"));
 			result2.setTestName(rs.getString("testName"));
 			result2.setTestResult(rs.getString("testResult"));
@@ -74,7 +74,15 @@ public ResultManagerImpl() {
 		connection.close();
 		return result2;
 	
-}}
+}
+
+	public boolean insertNewResult(HashMap<String, String> result) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	
+	}
 
 
 

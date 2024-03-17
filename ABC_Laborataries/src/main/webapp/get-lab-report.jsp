@@ -14,7 +14,7 @@
       *,
 *:before,
 *:after{
-    padding: 0;
+    padding: 5;
     margin: 0;
     box-sizing: border-box;
 }
@@ -32,6 +32,7 @@ form{
     border: 2px solid rgba(255,255,255,0.1);
     box-shadow: 0 0 40px rgba(8,7,16,0.6);
     padding: 50px 35px;
+    
 }
 label{
     display: block;
@@ -63,8 +64,7 @@ input{
 <span class="navbar-caption-wrap" style ="background:#FFFFFF" ><a class="navbar-caption text-primary display-2">ABC LABORATORY</a>
 </span>
 <div class="d-grid gap-4 d-md-block">
-
-<a class="nav-link" href="Home.jsp"><button  class="btn btn-secondary" type="button" data-bs-toggle="popover">HOME</button></a>
+<a class="nav-link" href="Home.jsp"><button  class="btn btn-secondary" type="button" data-bs-toggle="popover" align="right">HOME</button></a>
 
 </div>
 <div = "container">

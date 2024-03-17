@@ -110,7 +110,7 @@ input{
         <input type="password" placeholder="Password" id="password" name="password">
 
         <button style=" margin-top: 50px ; width: 100%;background-color: #006400;color: #FFFFFF;
-        padding: 15px; font-size: 18px;border-radius: 5px;cursor: pointer;" 
+        padding: 15px; font-size: 18px;border-radius: 5px;cursor: pointer;"formaction="staffLoginsuccess.jsp" 
         >Log In</button>
         <div class="social">
           

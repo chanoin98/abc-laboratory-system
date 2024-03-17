@@ -3,6 +3,7 @@ package com.code.ABC_Lab.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.HashMap;
 
 import com.code.ABC_Lab.dao.dbutils.DbDriverManager;
 import com.code.ABC_Lab.dao.dbutils.DbDriverManagerFactory;
@@ -48,6 +49,11 @@ public PatientManagerImpl() {
 		ps.close();
 		connection.close();
 		return result;
+	}
+
+	public String insertNewPatient(HashMap<String, String> patient) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

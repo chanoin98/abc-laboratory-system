@@ -128,7 +128,7 @@ height:1070px ;
 </style>
 <hr>
 <footer>
-  <p >C.H.WEDAGEDARA @ 2024</p>
+  <p >Copyright @ 2024-ABC Lab</p>
 </footer>
 </body>
 </html>

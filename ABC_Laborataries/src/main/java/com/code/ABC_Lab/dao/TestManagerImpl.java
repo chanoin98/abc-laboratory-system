@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import com.code.ABC_Lab.dao.dbutils.DbDriverManager;
@@ -137,6 +138,11 @@ public class TestManagerImpl implements TestManager{
 		connection.close();
 		
 		return result;
+	}
+
+	public String insertNewTest(HashMap<String, String> test) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

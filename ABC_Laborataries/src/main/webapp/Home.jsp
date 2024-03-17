@@ -35,7 +35,7 @@
 <img src="Cover.jpg" width="1700" height="550">
 <hr>
 <footer>
-  <p >C.H.WEDAGEDARA @ 2024</p>
+  <p >Copyright @ 2024-ABC Lab</p>
 </footer>
 <style>
 footer {

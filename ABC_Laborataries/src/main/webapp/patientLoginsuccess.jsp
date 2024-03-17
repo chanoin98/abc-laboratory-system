@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>ABC Laboratory-Staff Login</title>
+<title>ABC Laboratory-Patient Login</title>
  <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
@@ -18,6 +18,7 @@
 <div class="d-grid gap-4 d-md-block">
 
 <a class="nav-link" href="Home.jsp"><button  class="btn btn-secondary" type="button" data-bs-toggle="popover">HOME</button></a>
+<a class="nav-link" href="PatientLogin.jsp"><button  class="btn btn-secondary" type="button" data-bs-toggle="popover">BACK</button></a>
 
 </div>
 
@@ -30,15 +31,14 @@
  
  </br>
  
-<div class="d-grid gap-2 col-6 mx-auto">
-  <button class="btn btn-primary btn-lg" type="button">
-  <a href="ReserveAppoinments.jsp" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Reserve Lab Appointments</button></a>
-  </br>
-  <button class="btn btn-primary btn-lg" type="button">
-  <a href="get-lab-report.jsp" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Get Lab Reports</button></a>
+<div class="d-grid gap-2 col-6 mx-auto"> 
+  <button >
+  <a href="ReserveAppoinments.jsp" class="link-underline-light">Reserve Lab Appointments</button></a>
+  <button >
+  <a href="get-lab-report.jsp" class="link-underline-light">Get Lab Reports</button></a>
 </div>
 
-<p style="  padding :180px";>
+<p style="  padding :10px";>
 <hr>
 <footer>
   <p >Copyright @ 2024-ABC Lab</p>
@@ -53,6 +53,20 @@ footer {
 h1{
   font-family:Monospace;
 
+}
+button{
+background-color: white;
+  border: none;
+  color: blue;
+  padding: 65px 22px;
+  text-align: center;
+  font-size: 43px;
+  font-family:Monospace;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 0;
+  text-decoration: none;
 }
 
 </style>

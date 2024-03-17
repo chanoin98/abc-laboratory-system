@@ -101,7 +101,7 @@ e.printStackTrace();
 }
 %>
 </table> 
-<p style="  padding :120px";>
+<p style="  padding :80px";>
 <hr>
 <footer>
   <p >Copyright @ 2024-ABC Lab</p>

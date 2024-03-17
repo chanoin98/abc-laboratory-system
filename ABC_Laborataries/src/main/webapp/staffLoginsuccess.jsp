@@ -18,6 +18,7 @@
 <div class="d-grid gap-4 d-md-block">
 
 <a class="nav-link" href="Home.jsp"><button  class="btn btn-secondary" type="button" data-bs-toggle="popover">HOME</button></a>
+<a class="nav-link" href="StaffLogin.jsp"><button  class="btn btn-secondary" type="button" data-bs-toggle="popover">BACK</button></a>
 
 </div>
 
@@ -31,16 +32,16 @@
  </br>
  
 <div class="d-grid gap-2 col-6 mx-auto">
-  <button class="btn btn-success btn-lg" type="button">
-  <a href="insert-test.jsp" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Lab Test Registration</button></a>
-  </br>
-  <button class="btn btn-success btn-lg" type="button">
-  <a href="update-test-result.jsp" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Update Test Results</button></a>
+  <button >
+  <a href="insert-test.jsp" class="link-underline-light link-secondary">Lab Test Registration</button></a>
+  </br>  
+  <button >
+  <a href="update-test-result.jsp" class="link-underline-light link-secondary">Update Test Results</button></a>
 </div>
-<p style="  padding :180px";>
+<p style="  padding :10px";>
 <hr>
 <footer>
-  <p >C.H.WEDAGEDARA @ 2024</p>
+  <p >Copyright @ 2024-ABC Lab</p>
 </footer>
 <style>
 footer {
@@ -53,6 +54,21 @@ h1{
   font-family:Monospace;
 
 }
+button{
+background-color: white;
+  border: none;
+  font-color: #008000;
+  padding: 65px 22px;
+  text-align: center;
+  font-size: 43px;
+  font-family:Monospace;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 0;
+  text-decoration: none;
+}
+
 </style>
 </body>
 </html>
