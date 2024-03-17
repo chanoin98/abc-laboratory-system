@@ -99,7 +99,8 @@ input{
     <img src="StaffLogin.jpeg" width="1677" height="600">
     
    
-    <form>
+    
+    <form action="Logintech" method="post">
         <h3>Staff Login Here</h3>
 
         <label for="username">Username</label>
@@ -109,7 +110,7 @@ input{
         <input type="password" placeholder="Password" id="password" name="password">
 
         <button style=" margin-top: 50px ; width: 100%;background-color: #006400;color: #FFFFFF;
-        padding: 15px; font-size: 18px;border-radius: 5px;cursor: pointer;"
+        padding: 15px; font-size: 18px;border-radius: 5px;cursor: pointer;" 
         >Log In</button>
         <div class="social">
           
@@ -119,7 +120,7 @@ input{
 <p style="  padding :8px";>
 <hr>
 <footer>
-  <p >C.H.WEDAGEDARA @ 2024</p>
+  <p >Copyright @ 2024-ABC Lab</p>
 </footer>
 <style>
 footer {

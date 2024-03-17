@@ -12,7 +12,7 @@ public interface TestManager {
 	public boolean insertNewTest(Test test)throws SQLException, ClassNotFoundException;
 	public Test getSpecificTest(int testCode)throws SQLException, ClassNotFoundException;
 	public List<Test> getAllTests() throws SQLException, ClassNotFoundException;
-	public boolean updateTheTest(Test test)throws SQLException, ClassNotFoundException;
+	public boolean editTheTest(Test test)throws SQLException, ClassNotFoundException;
 	public boolean deleteTheTest(int testtCode)throws SQLException, ClassNotFoundException;
 
 	

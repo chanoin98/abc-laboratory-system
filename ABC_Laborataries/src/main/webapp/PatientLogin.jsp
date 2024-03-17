@@ -116,7 +116,7 @@ input{
         <div class="shape"></div>
     </div>
     
-    <form>
+    <form action="Loginpatient" method="post">
         <h3>Login Here</h3>
 
         <label for="username">Username</label>
@@ -126,7 +126,7 @@ input{
         <input type="password" placeholder="Password" id="password" name="password">
 
         <button style=" margin-top: 50px ; width: 100%;background-color: #241571;color: #FFFFFF;
-        padding: 15px; font-size: 18px;border-radius: 5px;cursor: pointer;"
+        padding: 15px; font-size: 18px;border-radius: 5px;cursor: pointer; "formaction="patientLoginsuccess.jsp"
         >Log In</button>
         <div class="social">
           
@@ -136,7 +136,7 @@ input{
 <p style="  padding :300px";>
 <hr>
 <footer>
-  <p >C.H.WEDAGEDARA @ 2024</p>
+  <p >Copyright @ 2024-ABC Lab</p>
 </footer>
 <style>
 footer {

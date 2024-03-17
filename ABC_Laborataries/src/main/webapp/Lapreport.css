@@ -1,0 +1,53 @@
+@charset "ISO-8859-1";
+.report-content{
+  border: 3px solid black;
+  padding: 9px;
+  box-shadow: 10px 10px 10px #888888;
+  margin: 30px;
+}
+.report-header{
+  border: 0px solid black;
+  height: 150px;
+  
+}
+.report-body{
+  margin-top: 80px;
+  border: 0px solid black;
+  height: 300px;
+  text-align: center;
+  font-size: 100px;
+  padding: 100px;
+  transform: rotate(-50deg);
+  color: grey;
+  text-transform: uppercase;
+}
+.report-sign{
+  border: 0px solid black;
+  height: 100px;
+  margin: 30px 30px;
+   
+}
+.report-footer{
+  border: 0px solid black;
+  height: 150px;
+}
+img {
+  height: 100%;
+  width: 100%;
+}
+.lab-doctor-sign{
+  float: right;
+   
+}
+.report-sign img{
+  height: 50px;
+  width: 100px;
+   display: inline-block;
+}
+.lab-incharge-sign{
+   display: inline-block;
+}
+.align-left{
+  text-align: ;
+  padding: 10px;
+}

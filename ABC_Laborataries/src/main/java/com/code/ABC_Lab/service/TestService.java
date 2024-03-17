@@ -8,9 +8,7 @@ import com.code.ABC_Lab.dao.TestManagerImpl;
 import com.code.ABC_Lab.model.Test;
 
 public class TestService {
-	
-	//Singleton
-	
+		
 	private static TestService testServiceObj;
 	
 	private TestService() {
@@ -42,8 +40,8 @@ public class TestService {
 		return getTestManager().getAllTests();
 	}
 
-	public boolean updateTheTest(Test test) throws SQLException, ClassNotFoundException {
-		return getTestManager().updateTheTest(test);
+	public boolean editTheTest(Test test) throws SQLException, ClassNotFoundException {
+		return getTestManager().editTheTest(test);
 	}
 
 	public boolean deleteTheTest(int testCode) throws SQLException, ClassNotFoundException {

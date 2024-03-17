@@ -37,10 +37,13 @@
  <h5> <li class="nav-item link-underline-opacity-0 link-dark">
     <a class="nav-link" href="gettest?actiontype=all">VIEW ALL TESTS & DELETE SPECIFIC</a>
   </li></h5>
+  <h5><li class="nav-item link-underline-opacity-0 link-dark">
+    <a class="nav-link" href="View-all.jsp"></a>
+  </li></h5>
   
 </ul>
 </br>
-<p> 
+<p style="color:red"> 
 ${feedbackMessage}
 </p>
 
@@ -62,7 +65,7 @@ ${feedbackMessage}
 <p style="  padding :30px";>
 <hr>
 <footer>
-  <p >C.H.WEDAGEDARA @ 2024</p>
+  <p >Copyright @ 2024-ABC Lab</p>
 </footer>
 <style>
 footer {

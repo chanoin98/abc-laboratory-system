@@ -1,4 +1,4 @@
- package com.code.ABC_Lab.controller;
+package com.code.ABC_Lab.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -45,7 +45,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 			insertNewTest(request,response);
 		}
 		else if (actiontype.equals("edit")) {
-			updatTheTest(request,response);
+			editTheTest(request,response);
 		}
 		else if (actiontype.equals("delete")) {
 			deleteTheTest(request,response);
@@ -81,18 +81,31 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		
 		
 	}
-	private void updatTheTest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+	private void editTheTest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		clearMessage();
 		Test test = new Test();
 		test.setTestCode(Integer.parseInt(request.getParameter("testCode")));
-		test.setTestName(request.getParameter("name"));
-		test.setTestPrize(Double.parseDouble(request.getParameter("prize")));
-		test.setTestTimeslot(request.getParameter("timeslot"));
+
+		test.setTestName(request.getParameter("testName"));
+		test.setTestPrize(Double.parseDouble(request.getParameter("testPrize")));
+		test.setTestTimeslot(request.getParameter("testTimeslot"));
+		/*
+		int testCode = Integer.parseInt(request.getParameter("testCode"));
+		String testName = request.getParameter("testName");
+		double testPrize = Double.parseDouble(request.getParameter("testPrize"));
+		String testTimeslot = request.getParameter("testTimeslot");
+
+		
+		Test test =  new Test(testCode, testName, testPrize,testTimeslot);
+		*/
+		boolean result;
+		String message = "";
+
 
 		
 		try {
-			if(getTestService().updateTheTest(test)){
+			if(getTestService().editTheTest(test)){
 			message = "The test has been updated successfully.. Test Code : " + test.getTestCode();
 			}else{
 			message = "Failed to update the test Test Code : " + test.getTestCode();

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,13 +27,13 @@
 </nav>
 </div>
 </br>
-<form action="testmanager" method = "post">
+<form action="result" method = "post">
 
 	<h5><label for = "patientName">Patient Name : </label></h5>
 	<input  class="form form-control" type = "text" name="patientname" id="patientName"/>
 	</br>
-	<h5><label for = "refnum">Test Reference Number : </label></h5>
-	<input  class="form form-control" type = "text" name="refnum" id="refnum"/>
+	<h5><label for = "testRefno">Test Reference Number : </label></h5>
+	<input  class="form form-control" type = "number" name="testRefno" id="testRefno"/>
 	</br>
 	<h5><label for = "testCode">Test Code : </label></h5>
 	<input  class="form form-control" type = "number" name="testCode" id="testCode"/>
@@ -52,11 +52,14 @@
 <button type="submit" class="btn btn-outline-success btn-lg">SUBMIT</button>
 <input type = "hidden" name="actiontype" value= "add"/>
 <button type="reset" class="btn btn-outline-success btn-lg">RESET</button>
+<p style = "font-size:30px ; color: red; font-family:Monospace" >
+${feedbackMessage}
+</p>
 </form>
 <p style="  padding :30px";>
 <hr>
 <footer>
-  <p >C.H.WEDAGEDARA @ 2024</p>
+  <p >Copyright @ 2024-ABC Lab</p>
 </footer>
 <style>
 footer {

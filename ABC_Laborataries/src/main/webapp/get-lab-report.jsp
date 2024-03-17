@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -73,15 +73,16 @@ input{
 <nav class="navbar" style="background-color: #e3f2fd;" >
 <h1 class="font-monospace"> Get Your Lab Reports Here </h1>
 </nav>
- <form>
+ <form method="get" action= "result">
 
         <h5><label for="refno">Reference No:</label></h5>
-        <input type="text" placeholder="Reference No" id="refno" name="refno">
+        <input type="text" placeholder="Reference No"  name="testRefno" >
+        	<input type= "hidden" name="actiontype" value="single"/> 
+        
+<a class="nav-link" href="Labreport.jsp"><button style=" margin-top: 50px ; width: 100%;background-color: #000080;color: #FFFFFF;
+        padding: 15px; font-size: 18px;border-radius: 5px;cursor: pointer;" 
 
-
-        <button style=" margin-top: 50px ; width: 100%;background-color: #000080;color: #FFFFFF;
-        padding: 15px; font-size: 18px;border-radius: 5px;cursor: pointer;"
-        >View Report</button>
+        >View Report</button></a>
         <div class="social">
           
         </div>
@@ -89,7 +90,7 @@ input{
     <p style="  padding :250px";>
 <hr>
 <footer>
-  <p >C.H.WEDAGEDARA @ 2024</p>
+  <p >Copyright @ 2024-ABC Lab</p>
 </footer>
 <style>
 footer {
@@ -98,6 +99,9 @@ footer {
   font-family:Monospace;
   font-size:20px
 }
+::placeholder {
+  color: black;
+  opacity: 1;
 </style>
 </body>
 </html>

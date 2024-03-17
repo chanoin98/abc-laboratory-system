@@ -67,9 +67,7 @@ public class TestManagerImpl implements TestManager{
 			test.setTestPrize(rs.getDouble("testPrize"));
 			test.setTestTimeslot(rs.getString("testTimeslot"));
 			
-			System.out.println(rs.getString("testName"));
-
-
+			//System.out.println(rs.getString("testName"));
 			
 		}
 	
@@ -106,17 +104,17 @@ public class TestManagerImpl implements TestManager{
 		return testList;
 	}
 
-	public boolean updateTheTest(Test test) throws SQLException, ClassNotFoundException {
+	public boolean editTheTest(Test test) throws SQLException, ClassNotFoundException {
 		
 		Connection connection = getConnection();
-		String query = "UPDATE test SET testName=?,testPrize=? testTimeslot=? WHERE testCode=? ";
+		String query = "UPDATE test SET testName=?,testPrize=? ,testTimeslot=? WHERE testCode=? ";
 		PreparedStatement ps = connection.prepareStatement(query);
 		ps.setString(1, test.getTestName());
 		ps.setDouble(2, test.getTestPrize());
-		ps.setInt(3, test.getTestCode());
-		ps.setString(4, test.getTestTimeslot());
+		ps.setString(3, test.getTestTimeslot());
+		ps.setInt(4, test.getTestCode());
 
-		
+	
 		boolean result = false;
 		if(ps.executeUpdate()>0)
 			result=true;

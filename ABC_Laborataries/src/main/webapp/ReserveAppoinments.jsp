@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,11 +26,11 @@
 <nav class="navbar" style="background-color: #e3f2fd;">
 <h1 class="font-monospace"> Reserve Your Appoinments </h1>
 </nav>
-<img src="reserveApp.jpg" width="800" height="870" align="right"  >
+<img src="reserveApp.jpg" width="800" height="1050" align="right"  >
 
 <div class="box" >
 
-<form align="left" action="testmanager" method = "post" style ="background:#c8dfea" >
+<form action="Reserve" method = "post" align="left" action="Reserva" method = "post" style ="background:#c8dfea" >
 
 	
 </br>
@@ -43,9 +43,13 @@
 	<h5><label for = "patientContactnumber">Patient Contact Number : </label></h5>
 	<input class="form form-control" type = "number" name="patientcontactnumber" id="patientContactnumber"/>
 	</br>
+	<h5><label for = "patientContactnumber">Patient Email : </label></h5>
+	<input class="form form-control" type = "text" name="patientemail" id="patientEmail"/>
+	</br>
 	<h5><div class="d-grid gap-4 d-md-block">
       <a class="nav-link" href="View-all.jsp"><button class="btn btn-warning" type="button" data-bs-toggle="popover">View Test Details</button></a>
 </div></h5>
+<p style="font-family:Monospace ;font-size:20px "> Please use the "View Test Details" before reserving your appoinment.</br>Make sure to eneter valid information ..</p>
 </br>
 	<h5><label for = "testName">Test Name : </label></h5>
 	<input class="form form-control" type = "text" name="testname" id="testName"/>
@@ -72,6 +76,10 @@
 </div>
 </div>
 </div>
+<p style = "font-size:30px ; color: red; font-family:Monospace" >
+${feedbackMessage}
+</p>
+
 </form>
 <style>
 footer {
@@ -85,13 +93,13 @@ opacity:0.4;
 background-color:#c8dfea;
 }
 form{
-height:870px ;
+height:1050px ;
  width: 876px;}
  
 </style>
 <hr>
 <footer>
-  <p >C.H.WEDAGEDARA @ 2024</p>
+  <p >Copyright @ 2024-ABC Lab</p>
 </footer>
 </body>
 </html>

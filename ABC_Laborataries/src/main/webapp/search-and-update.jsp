@@ -43,7 +43,7 @@
 </p>
 </br>
 
-<form actiontype= "gettest">
+<form method="get" action= "gettest">
 	<h5><label for "testCode"> Enter Test Code :  </label></h5>
 	<input class = "form-control" type="number" id="testCode" name = "testCode" placeholder= "Type the test code"/>
 	<input type= "hidden" name="actiontype" value="single"/> 
@@ -77,7 +77,7 @@
 <p style="  padding :30px";>
 <hr>
 <footer>
-  <p >C.H.WEDAGEDARA @ 2024</p>
+  <p >Copyright @ 2024-ABC Lab</p>
 </footer>
 <style>
 footer {

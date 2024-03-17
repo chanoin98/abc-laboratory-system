@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" isELIgnored="false"%>
     <%@ taglib prefix = "tag" uri="http://java.sun.com/jsp/jstl/core" %>
-    
+ 
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +13,7 @@
     <link href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"> </script>
 </head>
-<body style ="background:#c8dfea">
+
 <span class="navbar-caption-wrap" style ="background:#FFFFFF" ><a class="navbar-caption text-primary display-2">ABC LABORATORY</a>
 </span>
 <div class="d-grid gap-4 d-md-block">
@@ -27,46 +27,84 @@
 
 <div = "container">
 
+
 </br>
 <nav class="navbar" style="background-color: #e3f2fd;">
 <h1 class="font-monospace"> Test Details </h1>
 </nav>
+<form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
 
 <div = "container">
-
 </br>
 
 <p style="color:red"> ${feedbackMessage}</p>
 
 </br>
 
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<%
+String id = request.getParameter("userid");
+String driver = "com.mysql.jdbc.Driver";
+String connectionUrl = "jdbc:mysql://localhost:3306/";
+String database = "abc";
+String userid = "root";
+String password = "12345";
+try {
+Class.forName(driver);
+} catch (ClassNotFoundException e) {
+e.printStackTrace();
+}
+Connection connection = null;
+Statement statement = null;
+ResultSet resultSet = null;
+%>
+
+<body style ="background:#c8dfea">
+<table border="1">
 <table class="table table-striped">
-	<thead>
-		<tr>
-			<th>Test Code </th>
+<thead class="table-dark">
+<tr>
+<th>Test Code </th>
 			<th>Test Name</th>
 			<th>Test Prize [LKR]</th>
 			<th>Time Slot </th>
-		</tr>
-	</thead>
-	<tbody> 
-		<tag:forEach var="test" items ="${testList}">
-		<tr>
-			<td>${test.testCode}</td>
-			<td>${test.testName}</td>
-			<td>${test.testPrize}</td>
-			<td>${test.testTimeslot}</td>
-			
-			
-		</tr>
-		</tag:forEach>
-	</tbody> 
-</table>
-</div>
-<p style="  padding :200px";>
+
+</tr>
+ 
+</thead>
+<%
+try{
+connection = DriverManager.getConnection(connectionUrl+database, userid, password);
+statement=connection.createStatement();
+String sql ="select * from test";
+resultSet = statement.executeQuery(sql);
+while(resultSet.next()){
+%>
+<tr>
+<td><%=resultSet.getString("testCode") %></td>
+<td><%=resultSet.getString("testName") %></td>
+<td><%=resultSet.getString("testPrize") %></td>
+<td><%=resultSet.getString("testTimeslot") %></td>
+
+</tr>
+<%
+}
+connection.close();
+} catch (Exception e) {
+e.printStackTrace();
+}
+%>
+</table> 
+<p style="  padding :120px";>
 <hr>
 <footer>
-  <p >C.H.WEDAGEDARA @ 2024</p>
+  <p >Copyright @ 2024-ABC Lab</p>
 </footer>
 <style>
 footer {

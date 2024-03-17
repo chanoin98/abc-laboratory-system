@@ -27,11 +27,11 @@
 <nav class="navbar" style="background-color: #e3f2fd;" >
 <h1 class="font-monospace"> New Patient Registration </h1>
 </nav>
-${feedbackMessage}
-<img src="NewPatient.jpg" width="800" height="1045" align="right"  >
+
+<img src="NewPatient.jpg" width="800" height="1070" align="right"  >
 <div class="box" >
 
-<form align="left" action="testmanager" method = "post" style ="background:#c8dfea" >
+<form  action="patientmanager" method = "post" style ="background:#c8dfea" align="left" >
 </br>
 	<h5><label for = "patientName">Patient Name : </label></h5>
 	<input  class="form form-control" type = "text" name="patientname" id="patientName"/>
@@ -51,54 +51,65 @@ ${feedbackMessage}
 	<h5><label for = "patientEmail">Patient E-mail : </label></h5>
 	<input class="form form-control" type = "text" name="patientemail" id="patientEmail"/>
 	</br>
-	<h5><label for = "patientGender">Patient Gender : </label></h5>
 	</br>
-	<div class="form-check">
-  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+	
+  
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault1" value="Female">
   <h5><label class="form-check-label" for="flexRadioDefault1">
     Female
   </label>
   </div>
 <div class="form-check">
-  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+  <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault2" checked value="Male">
  <h5> <label class="form-check-label" for="flexRadioDefault2">
     Male
   </label></h5>
 </div>
+
+
 </br>
 
 <div class="row g-3 align-items-center">
   <div class="col-auto">
-   <h5> <label for="username" class="col-form-label" type = "text" name="username" id="username">Username</label></h5>
+  
+   <h5> <label for="username" class="col-form-label" type = "text"  id="username">Username</label></h5>
   </div>
   <div class="col-auto">
-    <input type="text" id="username" class="form-control" >
+    <input type="text" id="username" class="form-control" name="patientusername" >
   </div>
   
   <div class="row g-3 align-items-center">
   <div class="col-auto">
-   <h5> <label for="password" class="col-form-label" type = "password" name="password" id="password">Password</label></h5>
+   <h5> <label for="password" class="col-form-label" type = "password"  id="password">Password</label></h5>
   </div>
   <div class="col-auto">
-    <input type="password" id="password" class="form-control" >
+    <input type="password" id="password" class="form-control" name="patientpassword">
   </div>
   
    <div class="row g-3 align-items-center" >
   <div class="col-auto">
-  <h5>  <label for="confirmpassword" class="col-form-label" type = "password" name="confirmpassword" id="confirmpassword">Confirm Password</label></h5>
+  <h5>  <label for="confirmpassword" class="col-form-label" type = "password"  id="confirmpassword">Confirm Password</label></h5>
   </div>
   <div class="col-auto">
-    <input type="password" id="confirmpassword" class="form-control" >
+    <input type="password" id="confirmpassword" class="form-control" name="confirmpassword" >
   </div>
   <p>
+ 
 <input type = "hidden" name="actiontype" value= "add"/>
 <button type="submit" class="btn btn-outline-primary btn-lg">SUBMIT</button>
-<input type = "hidden" name="actiontype" value= "add"/>
+<input type = "hidden" name="actiontype" value= "reset"/>
 <button type="reset" class="btn btn-outline-primary btn-lg">RESET</button>
-</div>
-</div>
-</div>
+ <p style = "font-size:30px ; color: red; font-family:Monospace" >
+${feedbackMessage}
+</p>
+
+
 </form>
+
+</div>
+</div>
+</div>
 <style>
 footer {
   text-align: center;
@@ -111,7 +122,7 @@ opacity:0.3;
 background-color:#c8dfea;
 }
 form{
-height:1045px ;
+height:1070px ;
  width: 875px;}
  
 </style>
