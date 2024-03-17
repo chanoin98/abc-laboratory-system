@@ -1,0 +1,42 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>TestController</servlet-name>
+  	<display-name>TestController</display-name>
+  	<description></description>
+  	<servlet-class>com.code.ABC_Lab.controller.TestController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>TestController1</servlet-name>
+  	<display-name>TestController1</display-name>
+  	<description></description>
+  	<servlet-class>com.code.ABC_Lab.controller.TestController1</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Login</servlet-name>
+  	<display-name>Login</display-name>
+  	<description></description>
+  	<servlet-class>com.code.ABC_Lab.login.Login</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>TestController</servlet-name>
+  	<url-pattern>/testmanager</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>TestController</servlet-name>
+  	<url-pattern>/gettest</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Login</servlet-name>
+  	<url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>TestController1</servlet-name>
+  	<url-pattern>/viewall</url-pattern>
+  </servlet-mapping>
+ 
+</web-app>
