@@ -1,6 +1,7 @@
 package com.code.ABC_Lab.controller;
 
 import java.io.IOException;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpSession;
 
 import com.code.ABC_Lab.model.Test;
 import com.code.ABC_Lab.service.TestService;
+import com.mysql.jdbc.PreparedStatement;
 
 public class TestController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -66,16 +68,19 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		try {
 			if (getTestService().insertNewTest(test))
 			{
-				message = "Adding new test is succefull ! ";
+				message = ("Adding new test is succefull ! Test Code: " + test.getTestCode());
+
 			}
 			else {
-				message = "Failed to add !";
+				message = "Failed to add ! Try again";
 			}
+			
+			
 			} catch (ClassNotFoundException | SQLException e) {
 			message = "Operation failed " + e.getMessage();
 			}
 		
-		request.setAttribute("feedbackMessage", message);
+		request.setAttribute("feedbackMessage", message); 
 		RequestDispatcher rd = request.getRequestDispatcher("insert-test.jsp");
 		rd.forward(request,response);
 		
@@ -84,22 +89,16 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 	private void editTheTest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		clearMessage();
+		
 		Test test = new Test();
+		
+		
 		test.setTestCode(Integer.parseInt(request.getParameter("testCode")));
-
 		test.setTestName(request.getParameter("testName"));
 		test.setTestPrize(Double.parseDouble(request.getParameter("testPrize")));
 		test.setTestTimeslot(request.getParameter("testTimeslot"));
-		/*
-		int testCode = Integer.parseInt(request.getParameter("testCode"));
-		String testName = request.getParameter("testName");
-		double testPrize = Double.parseDouble(request.getParameter("testPrize"));
-		String testTimeslot = request.getParameter("testTimeslot");
-
 		
-		Test test =  new Test(testCode, testName, testPrize,testTimeslot);
-		*/
-		boolean result;
+	//	boolean result;
 		String message = "";
 
 
@@ -119,13 +118,15 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		rd.forward(request,response);
 		
 	}
+	
+	
 	private void deleteTheTest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		clearMessage();
 		int testCode = Integer.parseInt(request.getParameter("testCode"));
 		try {
 			if(getTestService().deleteTheTest(testCode)) {
-				message = "Test has been deleted successfully ..Test Code : " +testCode;	
+				message = "Test has been deleted successfully ! -> Test Code : " +testCode;	
 			}else {
 				message = "Failed to delete the test..Test code : " + testCode;
 			}

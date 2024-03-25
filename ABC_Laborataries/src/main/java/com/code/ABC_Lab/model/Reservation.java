@@ -2,26 +2,30 @@ package com.code.ABC_Lab.model;
 
 public class Reservation {
 	private int reservationNumber;
+	private int patientUHID;
 	private String patientName;
+	private String patientNic;
 	private int patientAge;
 	private int patientContactno;
 	private String patientEmail;
 	private String testName;
 	private int testCode;
-	private String refDoc;
+	private String docName;
 	private String testTimeslot;
 
-	public Reservation(int reservationNumber, String patientName,int patientAge
+	public Reservation(int reservationNumber, int patientUHID,String patientName,String patientNic,int patientAge
 			,int patientContactno,String patientEmail,String testName,int testCode,
-			String refDoc,String testTimeslot) {
+			String docName,String testTimeslot) {
 		this.reservationNumber = reservationNumber;
+		this.patientUHID = patientUHID;
 		this.patientName = patientName;
+		this.patientNic = patientNic;
 		this.patientAge = patientAge;
 		this.patientContactno = patientContactno;
 		this.patientEmail = patientEmail;
 		this.testName = testName;
 		this.testCode = testCode;
-		this.refDoc = refDoc;
+		this.docName = docName;
 		this.testTimeslot = testTimeslot;
 
 	}
@@ -29,15 +33,17 @@ public class Reservation {
 	public Reservation() {
 	}
 
-	public Reservation(String patientName, int patientAge,int patientContactno,String patientEmail,String testName,int testCode,
-			String refDoc,String testTimeslot) {
+	public Reservation(int patientUHID,String patientName, String patientNic,int patientAge,int patientContactno,String patientEmail,String testName,int testCode,
+			String docName,String testTimeslot) {
+		this.patientUHID = patientUHID;
 		this.patientName = patientName;
+		this.patientNic=patientNic;
 		this.patientAge = patientAge;
 		this.patientContactno = patientContactno;
 		this.patientEmail = patientEmail;
 		this.testName = testName;
 		this.testCode = testCode;
-		this.refDoc = refDoc;
+		this.docName = docName;
 		this.testTimeslot = testTimeslot;
 
 
@@ -51,12 +57,28 @@ public class Reservation {
 		this.reservationNumber = reservationNumber;
 	}
 
+	public int getPatientUHID() {
+		return patientUHID;
+	}
+
+	public void setPatientUHID(int patientUHID) {
+		this.patientUHID = patientUHID;
+	}
+
 	public String getPatientName() {
 		return patientName;
 	}
 
 	public void setPatientName(String patientName) {
 		this.patientName = patientName;
+	}
+
+	public String getPatientNic() {
+		return patientNic;
+	}
+
+	public void setPatientNic(String patientNic) {
+		this.patientNic = patientNic;
 	}
 
 	public int getPatientAge() {
@@ -99,12 +121,12 @@ public class Reservation {
 		this.testCode = testCode;
 	}
 
-	public String getRefDoc() {
-		return refDoc;
+	public String getDocName() {
+		return docName;
 	}
 
-	public void setRefDoc(String refDoc) {
-		this.refDoc = refDoc;
+	public void setDocName(String docName) {
+		this.docName = docName;
 	}
 
 	public String getTestTimeslot() {
@@ -114,6 +136,7 @@ public class Reservation {
 	public void setTestTimeslot(String testTimeslot) {
 		this.testTimeslot = testTimeslot;
 	}
+
 	
 
 }

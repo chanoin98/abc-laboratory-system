@@ -18,18 +18,8 @@
   	<servlet-class>com.code.ABC_Lab.controller.PatientController</servlet-class>
   </servlet>
   
-  <servlet>
-  	<servlet-name>ReservationController</servlet-name>
-  	<display-name>ReservationController</display-name>
-  	<description></description>
-  	<servlet-class>com.code.ABC_Lab.controller.ReservationController</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>ResultController</servlet-name>
-  	<display-name>ResultController</display-name>
-  	<description></description>
-  	<servlet-class>com.code.ABC_Lab.controller.ResultController</servlet-class>
-  </servlet>
+
+  	
   <servlet>
   	<servlet-name>LoginServlet</servlet-name>
   	<display-name>LoginServlet</display-name>
@@ -42,8 +32,18 @@
   	<description></description>
   	<servlet-class>com.code.ABC_Lab.controller.LoginServletPatient</servlet-class>
   </servlet>
- 
-  
+  <servlet>
+  	<servlet-name>ResultController</servlet-name>
+  	<display-name>ResultController</display-name>
+  	<description></description>
+  	<servlet-class>com.code.ABC_Lab.controller.ResultController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ReservationController</servlet-name>
+  	<display-name>ReservationController</display-name>
+  	<description></description>
+  	<servlet-class>com.code.ABC_Lab.controller.ReservationController</servlet-class>
+  </servlet>
  
   <servlet-mapping>
   	<servlet-name>TestController</servlet-name>
@@ -61,14 +61,8 @@
   	<url-pattern>/patientmanager</url-pattern>
   </servlet-mapping>
   
-  <servlet-mapping>
-  	<servlet-name>ReservationController</servlet-name>
-  	<url-pattern>/Reserve</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>ResultController</servlet-name>
-  	<url-pattern>/result</url-pattern>
-  </servlet-mapping>
+  
+ 
   <servlet-mapping>
   	<servlet-name>LoginServlet</servlet-name>
   	<url-pattern>/Logintech</url-pattern>
@@ -77,7 +71,19 @@
   	<servlet-name>LoginServletPatient</servlet-name>
   	<url-pattern>/Loginpatient</url-pattern>
   </servlet-mapping>
-  
+  <servlet-mapping>
+  	<servlet-name>ResultController</servlet-name>
+  	<url-pattern>/getresult</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ResultController</servlet-name>
+  	<url-pattern>/result</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ReservationController</servlet-name>
+  	<url-pattern>/reserve</url-pattern>
+  </servlet-mapping>
+ 
  
  
 </web-app>

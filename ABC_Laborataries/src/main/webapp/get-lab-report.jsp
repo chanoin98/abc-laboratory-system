@@ -73,7 +73,7 @@ input{
 <nav class="navbar" style="background-color: #e3f2fd;" >
 <h1 class="font-monospace"> Get Your Lab Reports Here </h1>
 </nav>
- <form method="get" action= "result">
+ <form method="get" action= "getresult">
 
         <h5><label for="refno">Reference No:</label></h5>
         <input type="text" placeholder="Reference No"  name="testRefno" >

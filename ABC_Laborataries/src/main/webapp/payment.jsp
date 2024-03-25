@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-<title>ABC Laboratary - Payments</title>
+<title>ABC Laboratory - Payments</title>
   <link rel="stylesheet" type="text/css" href="payment.css">
 </head>
 <body>

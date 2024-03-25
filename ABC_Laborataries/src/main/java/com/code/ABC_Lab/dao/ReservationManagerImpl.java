@@ -27,16 +27,18 @@ public ReservationManagerImpl() {
 		
 		Connection connection = getConnection();
 		
-		String query = "INSERT INTO reservation (patientName,patientAge,patientContactno,patientEmail,testName,testCode,refDoc,testTimeslot)VALUES (?,?,?,?,?,?,?,?)";
+		String query = "INSERT INTO reservation (patientUHID,patientName,patientNic,patientAge,patientContactno,patientEmail,testCode,testName,docName,testTimeslot)VALUES (?,?,?,?,?,?,?,?)";
 		PreparedStatement ps = connection.prepareStatement(query);
-		ps.setString(1,  reservation.getPatientName());
-		ps.setInt(2,  reservation.getPatientAge());
-		ps.setInt(3, reservation.getPatientContactno());
-		ps.setString(4,  reservation.getPatientEmail());
-		ps.setString(5,  reservation.getTestName());
-		ps.setInt(6, reservation.getTestCode());
-		ps.setString(7,  reservation.getRefDoc());
-		ps.setString(8,  reservation.getTestTimeslot());
+		ps.setInt(1,  reservation.getPatientUHID());
+		ps.setString(2,  reservation.getPatientName());
+		ps.setString(3,  reservation.getPatientNic());
+		ps.setInt(4,  reservation.getPatientAge());
+		ps.setInt(5, reservation.getPatientContactno());
+		ps.setString(6,  reservation.getPatientEmail());
+		ps.setInt(7, reservation.getTestCode());
+		ps.setString(8,  reservation.getTestName());
+		ps.setString(9,  reservation.getDocName());
+		ps.setString(10,  reservation.getTestTimeslot());
 
 		boolean result = false;
 		

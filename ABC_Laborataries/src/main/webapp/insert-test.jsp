@@ -27,6 +27,9 @@
 <nav class="navbar" style="background-color: #66CDAA;">
 <h1 class="font-monospace"> Registering New Test </h1>
 </nav>
+<p style = "font-size:20px ; color: red; font-family:Monospace" >
+${feedbackMessage}  </p>
+
 <div = "container">
 <ul class="nav nav-tabs">
   <h5><li class="nav-item link-underline-opacity-0 link-dark">
@@ -44,9 +47,6 @@
   
 </ul>
 </br>
-<p style="color:red"> 
-${feedbackMessage}
-</p>
 
 </br>
 <form action="testmanager" method = "post">

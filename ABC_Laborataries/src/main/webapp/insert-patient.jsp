@@ -27,7 +27,9 @@
 <nav class="navbar" style="background-color: #e3f2fd;" >
 <h1 class="font-monospace"> New Patient Registration </h1>
 </nav>
-
+<p style = "font-size:20px ; color: red; font-family:Monospace" >
+${feedbackMessage}
+</p>
 <img src="NewPatient.jpg" width="800" height="1070" align="right"  >
 <div class="box" >
 
@@ -76,7 +78,7 @@
    <h5> <label for="username" class="col-form-label" type = "text"  id="username">Username</label></h5>
   </div>
   <div class="col-auto">
-    <input type="text" id="username" class="form-control" name="patientusername" >
+    <input type="text" id="username" class="form-control" name="patientUsername" >
   </div>
   
   <div class="row g-3 align-items-center">
@@ -84,7 +86,7 @@
    <h5> <label for="password" class="col-form-label" type = "password"  id="password">Password</label></h5>
   </div>
   <div class="col-auto">
-    <input type="password" id="password" class="form-control" name="patientpassword">
+    <input type="password" id="password" class="form-control" name="patientPassword">
   </div>
   
    <div class="row g-3 align-items-center" >
@@ -100,9 +102,7 @@
 <button type="submit" class="btn btn-outline-primary btn-lg">SUBMIT</button>
 <input type = "hidden" name="actiontype" value= "reset"/>
 <button type="reset" class="btn btn-outline-primary btn-lg">RESET</button>
- <p style = "font-size:30px ; color: red; font-family:Monospace" >
-${feedbackMessage}
-</p>
+ 
 
 
 </form>

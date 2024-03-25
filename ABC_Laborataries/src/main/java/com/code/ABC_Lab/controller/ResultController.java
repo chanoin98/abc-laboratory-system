@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.code.ABC_Lab.model.LabResult;
 import com.code.ABC_Lab.model.Patient;
-import com.code.ABC_Lab.model.Result;
 import com.code.ABC_Lab.model.Test;
 import com.code.ABC_Lab.service.PatientService;
 import com.code.ABC_Lab.service.ResultService;
@@ -53,16 +53,16 @@ public class ResultController extends HttpServlet {
 		{
 			clearMessage();
 
-			Result result = new Result();
-			result.setPatientName(request.getParameter("patientname"));
-			result.setTestRefno(Integer.parseInt(request.getParameter("testRefno")));
-			result.setTestCode(Integer.parseInt(request.getParameter("testCode")));
-			result.setTestName(request.getParameter("testName"));
-			result.setTestResult(request.getParameter("testResult"));
-			result.setTestComment(request.getParameter("comment"));
+			LabResult labResult = new LabResult();
+			labResult.setPatientName(request.getParameter("patientname"));
+			labResult.setTestRefno(Integer.parseInt(request.getParameter("testRefno")));
+			labResult.setTestCode(Integer.parseInt(request.getParameter("testCode")));
+			labResult.setTestName(request.getParameter("testName"));
+			labResult.setTestResult(request.getParameter("testResult"));
+			labResult.setTestComment(request.getParameter("comment"));
 			
 			try {
-				if (getResultService().insertNewResult(result))
+				if (getResultService().insertNewResult(labResult))
 				{
 					message = "Test Result has entered Successfull ! ";
 				}
@@ -83,16 +83,14 @@ public class ResultController extends HttpServlet {
 		{
 			int testRefno = Integer.parseInt(request.getParameter("testRefno"));
 
-			
-			
 			try {
-				Result result = getResultService().getSpecificResult(testRefno);
-				if(result.getTestRefno()>0)
+				LabResult labResult = getResultService().getSpecificResult(testRefno);
+				if(labResult.getTestRefno()>0)
 				{
-					request.setAttribute("result", result);
+					request.setAttribute("labResult", labResult);
 					
 				}else {
-					message= "No record found under related search..";
+					//message= "No record found under related search..";
 				}
 			} catch (ClassNotFoundException | SQLException e) {
 				message=e.getMessage();

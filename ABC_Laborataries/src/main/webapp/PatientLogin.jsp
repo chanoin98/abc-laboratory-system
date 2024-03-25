@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -116,24 +118,28 @@ input{
         <div class="shape"></div>
     </div>
     
-    <form action="Loginpatient" method="post">
+        <form action="ptlogin" method="post">
+    
         <h3>Login Here</h3>
 
         <label for="username">Username</label>
-        <input type="text" placeholder="Username" id="username" name="username">
+        <input type="text" placeholder="Username" id="username" name="patientUsername">
 
         <label for="password">Password</label>
-        <input type="password" placeholder="Password" id="password" name="password">
+        <input type="password" placeholder="Password" id="password" name="patientPassword">
 
         <button style=" margin-top: 50px ; width: 100%;background-color: #241571;color: #FFFFFF;
-        padding: 15px; font-size: 18px;border-radius: 5px;cursor: pointer; "formaction="patientLoginsuccess.jsp"
+        padding: 15px; font-size: 18px;border-radius: 5px;cursor: pointer; "
         >Log In</button>
         <div class="social">
           
         </div>
+  <p style = "font-size:20px ; color: red; font-family:Monospace" >
+${feedbackmessage}  </p>     
     </form>
-    
+
 <p style="  padding :300px";>
+
 <hr>
 <footer>
   <p >Copyright @ 2024-ABC Lab</p>
@@ -149,3 +155,4 @@ footer {
 
 </body>
 </html>
+

@@ -28,6 +28,8 @@
 <nav class="navbar" style="background-color: #66CDAA;">
 <h1 class="font-monospace"> View All Tests & Delete Specific </h1>
 </nav>
+<p style = "font-size:20px ; color: red; font-family:Monospace" >
+${message}  
 <div = "container">
 <ul class="nav nav-tabs">
  <h5> <li class="nav-item">
@@ -44,8 +46,8 @@
 
 </br>
 
-<p style="color:red"> ${feedbackMessage}</p>
 
+</p>
 </br>
 
 <table style="width:100% "class="table table-striped">

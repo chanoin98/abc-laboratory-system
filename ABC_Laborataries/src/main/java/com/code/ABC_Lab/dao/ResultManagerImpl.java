@@ -7,7 +7,7 @@ import java.util.HashMap;
 
 import com.code.ABC_Lab.dao.dbutils.DbDriverManager;
 import com.code.ABC_Lab.dao.dbutils.DbDriverManagerFactory;
-import com.code.ABC_Lab.model.Result;
+import com.code.ABC_Lab.model.LabResult;
 
 
 public class ResultManagerImpl implements ResultManager {
@@ -25,54 +25,55 @@ public ResultManagerImpl() {
 		return driverManager.getConnection();
 	}
 	
-	public boolean insertNewResult(Result result) throws SQLException, ClassNotFoundException {
+	public boolean insertNewResult(LabResult labResult) throws SQLException, ClassNotFoundException {
 		
 		Connection connection = getConnection();
 		
-		String query = "INSERT INTO result (patientName,testRefno,testCode,testName,testResult,testComment)VALUES (?,?,?,?,?,?)";
+		String query = "INSERT INTO labResult (patientName,testRefno,testCode,testName,testResult,testComment)VALUES (?,?,?,?,?,?)";
 		PreparedStatement ps = connection.prepareStatement(query);
-		ps.setString(1,  result.getPatientName());
-		ps.setInt(2,  result.getTestRefno());
-		ps.setInt(3,  result.getTestCode());
-		ps.setString(4,  result.getTestName());
-		ps.setString(5,  result.getTestResult());
-		ps.setString(6,  result.getTestComment());
+		ps.setString(1,  labResult.getPatientName());
+		ps.setInt(2,  labResult.getTestRefno());
+		ps.setInt(3,  labResult.getTestCode());
+		ps.setString(4,  labResult.getTestName());
+		ps.setString(5,  labResult.getTestResult());
+		ps.setString(6,  labResult.getTestComment());
 		
-		boolean result1 = false;
+		boolean result = false;
 		
 		if(ps.executeUpdate()>0)
-			result1 = true;
+			result = true;
 		ps.close();
 		connection.close();
-		return result1;
+		return result;
 	}
 
-	public Result getSpecificResult(int testRefno) throws SQLException, ClassNotFoundException {
+	public LabResult getSpecificResult(int testRefno) throws SQLException, ClassNotFoundException {
 		
 		Connection connection = getConnection();
-		String query = "SELECT * FROM result WHERE testRefno=?";
+		String query = "SELECT * FROM labResult WHERE testRefno=?";
 		
 		PreparedStatement ps = connection.prepareStatement(query);
 		ps.setInt(1, testRefno);
 		
 		ResultSet rs =ps.executeQuery();
 		
-		Result result2 = new Result();
+		LabResult labResult = new LabResult();
 		
 		while(rs.next())
 		{
-			result2.setPatientName(rs.getString("patientName"));
-			result2.setTestCode(rs.getInt("testCode"));
-			result2.setTestName(rs.getString("testName"));
-			result2.setTestResult(rs.getString("testResult"));
-			result2.setTestComment(rs.getString("testComment"));
+			labResult.setTestRefno(rs.getInt("testRefno"));
+			labResult.setPatientName(rs.getString("patientName"));
+			labResult.setTestCode(rs.getInt("testCode"));
+			labResult.setTestName(rs.getString("testName"));
+			labResult.setTestResult(rs.getString("testResult"));
+			labResult.setTestComment(rs.getString("testComment"));
 
 			
 		}
 	
 		ps.close();
 		connection.close();
-		return result2;
+		return labResult;
 	
 }
 

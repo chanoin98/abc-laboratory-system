@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" isELIgnored="false"%>
+<%@ taglib prefix = "tag" uri="http://java.sun.com/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -100,7 +103,7 @@ input{
     
    
     
-    <form action="Logintech" method="post">
+    <form action="login" method="post">
         <h3>Staff Login Here</h3>
 
         <label for="username">Username</label>
@@ -110,13 +113,15 @@ input{
         <input type="password" placeholder="Password" id="password" name="password">
 
         <button style=" margin-top: 50px ; width: 100%;background-color: #006400;color: #FFFFFF;
-        padding: 15px; font-size: 18px;border-radius: 5px;cursor: pointer;"formaction="staffLoginsuccess.jsp" 
+        padding: 15px; font-size: 18px;border-radius: 5px;cursor: pointer;"
         >Log In</button>
         <div class="social">
           
         </div>
+        <p style = "font-size:20px ; color: red; font-family:Monospace" >
+${feedbackmessage}  </p>   
     </form>
-    
+ 
 <p style="  padding :8px";>
 <hr>
 <footer>

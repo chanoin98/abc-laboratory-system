@@ -43,7 +43,8 @@ public class TestService {
 	public boolean editTheTest(Test test) throws SQLException, ClassNotFoundException {
 		return getTestManager().editTheTest(test);
 	}
-
+	
+	
 	public boolean deleteTheTest(int testCode) throws SQLException, ClassNotFoundException {
 		return getTestManager().deleteTheTest(testCode);
 	}

@@ -58,7 +58,7 @@
   <div class="progress-bar bg-secondary" style="width: 100%"></div>
 </div>
 </br>
-<form action="gettest" method = "post">
+<form method = "post" action="testmanager" >
 	<h5><label for = "testCodeUpdate">Test Code : </label></h5>
 	<input class="form-control" type = "number" name="testCode" id="testCodeUpdate" readonly="readonly" disabled value="${test.testCode}"/>
 	</br>
@@ -72,7 +72,7 @@
 	<h5><label for = "testTimeslot">Test Timeslot</label></h5>
 	<input class="form-control" type ="text" name="testTimeslot" id="testTimeslot" value="${test.testTimeslot}"/>
 	</br>
-	<input type = "hidden" name="actiontype" value= "edit"/>
+	<input type = "hidden" name="actiontype" value="edit"/>
 	<button class="btn btn-success btn-lg" type="submit"> Update The Test </button>
 </form>
 <p style="  padding :30px";>

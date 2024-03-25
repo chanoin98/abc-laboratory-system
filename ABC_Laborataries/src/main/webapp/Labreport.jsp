@@ -11,6 +11,8 @@
     <link href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"> </script>
 	<link rel="stylesheet" href="Lapreport.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
 	
 </head>
 <body>
@@ -26,10 +28,16 @@
 </div>
 <div = "container">
 
-<p style="color:red"> ${feedbackMessage}
 </p>
 </br>
-<form method="get" action= "result" >
+
+</div>
+</div></br>
+<div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+  <div class="progress-bar bg-secondary" style="width: 100%"></div>
+</div>
+</br>
+<form method="post" action= "result" >
 
 <div class="report-content">
 <h1 style = font-size:50px ; align:center>ABC-Laboratory</h1>
@@ -39,43 +47,38 @@
       <tr>
         <td>Patient Name:</td>
         <td class="align-left"> </td>
-        <td><?php echo $result['patientName']; ?></td>
-        
-        <td>
+        <td class="align-left">${labResult.patientName} </td>
       </tr>
       <tr>
         <td>Test Reference Number : </td> 
         <td class="align-left"></td>
-        </tr>
-       <td>Date:</td>
-       <td class="align-left"></td>
-       
+        <td> ${labResult.testRefno}</td>
+      </tr>
+       <tr>
+        <td>Test Code : </td> 
+        <td class="align-left"></td>
+        <td> ${labResult.testCode}</td>
       </tr>
       <tr>
+        <td>Test Name : </td> 
+        <td class="align-left"></td>
+        <td> ${labResult.testName}</td>
+      </tr>
+     
       </table>
     <hr>
   <p>
 
-
-	<h5><label for = "patientName">Patient Name</label></h5>
-	<input class="form-control" type ="text" name="patientName" id="patientName" value="${result.patientName}"/>
-	</br>
-	<h5><label for = "testRefno">Test Reference Number</label></h5>
-	<input class="form-control" type = "number" name="testRefno" id="testRefno" value="${result.testRefno}"/>
-	</br>
-    <h5><label for = "testCode">Test Code </label></h5>
-	<input class="form-control" type = "number" name="testCode" id="testCode" value="${result.testCode}"/>
-	</br>
-	<h5><label for = "testName">Test Name</label></h5>
-	<input class="form-control" type ="text" name="testName" id="testName" value="${result.testName}"/>
-	</br>
+<div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+  <div class="progress-bar bg-secondary" style="width: 100%"></div>
+</div>
+   <br>
 	<h5><label for = "testResult">Test Result</label></h5>
-	<input class="form-control" type ="text" name="testResult" id="testResult" value="${result.testResult}"/>
+	<input class="form-control" type ="text" name="testResult" id="testResult" value="${labResult.testResult}"/>
 	</br>
 	<h5><label for = "testComment">Test Comment</label></h5>
-	<input class="form-control" type ="text" name="testComment" id="testComment" value="${result.testComment}"/>
+	<input class="form-control" type ="text" name="testComment" id="testComment" value="${labResult.testComment}"/>
 	</br>
-	</form>
 	
 
   </div>
@@ -92,10 +95,36 @@
     </div>
     
   </div>
-  
-  
  
 </div>
+<input type="submit" id="submit-form" value="submit" hidden /> 
+</form>
+	<form >
+	<button id="download-pdf" class="btn btn-danger btn-lg"><i class="fa fa-download"></i> DOWNLOAD</button>
+	</form>
+  
+    <script> 
+        const downloadPdf = document 
+            .querySelector("#download-pdf"); 
+  
+        const submitForm = document 
+            .querySelector("#submit-form"); 
+  
+        downloadPdf.addEventListener("click", () => { 
+  
+            let element = document.createElement("a"); 
+            element.href = "./Labreport.jsp"; 
+
+            element.download = "Lab Report.pdf"; 
+            document.documentElement.appendChild(element); 
+  
+            element.click(); 
+            document.documentElement.removeChild(element); 
+            submitForm.click(); 
+        }); 
+        
+    </script> 
+
 <p style="  padding :30px";>
 <hr>
 <footer>

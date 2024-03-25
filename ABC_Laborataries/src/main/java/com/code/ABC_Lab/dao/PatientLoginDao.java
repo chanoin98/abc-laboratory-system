@@ -7,11 +7,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.code.ABC_Lab.model.LoginBean;
+import com.code.ABC_Lab.model.PatientLoginBean;
 
 
-public class LoginDao {
+public class PatientLoginDao {
 
-    public boolean validate(LoginBean loginBean) throws ClassNotFoundException {
+    public boolean validate(PatientLoginBean patientloginBean) throws ClassNotFoundException {
         boolean status = false;
 
         Class.forName("com.mysql.jdbc.Driver");
@@ -20,9 +21,9 @@ public class LoginDao {
             .getConnection("jdbc:mysql://localhost:3306/abc?useSSL=false", "root", "12345");
 
             PreparedStatement preparedStatement = connection
-            .prepareStatement("select * from techlogin where username = ? and password = ? ")) {
-            preparedStatement.setString(1, loginBean.getUsername());
-            preparedStatement.setString(2, loginBean.getPassword());
+            .prepareStatement("select * from patient where patientUsername = ? and patientPassword = ? ")) {
+            preparedStatement.setString(1, patientloginBean.getPatientUsername());
+            preparedStatement.setString(2, patientloginBean.getPatientPassword());
 
             System.out.println(preparedStatement);
             ResultSet rs = preparedStatement.executeQuery();

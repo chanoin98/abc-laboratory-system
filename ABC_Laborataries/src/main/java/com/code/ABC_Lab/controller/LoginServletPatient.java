@@ -1,43 +1,64 @@
 package com.code.ABC_Lab.controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.code.ABC_Lab.dao.LoginDao;
-import com.code.ABC_Lab.model.LoginBean;
+import com.code.ABC_Lab.dao.PatientLoginDao;
+import com.code.ABC_Lab.model.PatientLoginBean;
 
-
+@WebServlet("/ptlogin")
 public class LoginServletPatient extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-   
-	private LoginDao loginDao;
+    private static final long serialVersionUID = 1L;
+	String message="";
+
+    private PatientLoginDao patientloginDao;
 
     public void init() {
-        loginDao = new LoginDao();
+    	patientloginDao = new PatientLoginDao();
     }
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 String username = request.getParameter("username");
-	        String password = request.getParameter("password");
-	        LoginBean loginBean = new LoginBean();
-	        loginBean.setUsername(username);
-	        loginBean.setPassword(password);
 
-	        try {
-	            if (loginDao.validate(loginBean)) {
-	                response.sendRedirect("patientLoginsuccess.jsp");
-	                //response.sendRedirect("Logintech");
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    throws ServletException, IOException {
 
-	            } else {
-	                HttpSession session = request.getSession();
-	              //  response.sendRedirect("PatientLogin.jsp");
+        String patientUsername = request.getParameter("patientUsername");
+        String patientPassword = request.getParameter("patientPassword");
+        PatientLoginBean patientloginBean = new PatientLoginBean();
+        patientloginBean.setPatientUsername(patientUsername);
+        patientloginBean.setPatientPassword(patientPassword);
 
-	            }
-	        } catch (ClassNotFoundException e) {
-	            e.printStackTrace();
-	        }
-	    }
-	}
+        try {
+            if (patientloginDao.validate(patientloginBean)) {
+                
+           response.sendRedirect("patientLoginsuccess.jsp");
+           
+            } else {
+
+                response.sendRedirect("PatientLogin.jsp");
+
+            
+            }
+        } catch (ClassNotFoundException e) {
+        	message = "Operation failed " + e.getMessage();
+        
+        	e.printStackTrace();
+        	
+
+        }
+
+
+    	HttpSession session = request.getSession();
+        message = "Failed to login ! Invalid Username or Password...";
+
+		session.setAttribute("feedbackmessage", message);
+
+  
+    }
+}

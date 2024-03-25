@@ -27,6 +27,9 @@
 <h1 class="font-monospace"> Update Test Results </h1>
 </nav>
 </div>
+<p style = "font-size:20px ; color: red; font-family:Monospace" >
+${feedbackMessage}
+</p>
 </br>
 <form action="result" method = "post">
 
@@ -53,9 +56,7 @@
 <button type="submit" class="btn btn-outline-success btn-lg">SUBMIT</button>
 <input type = "hidden" name="actiontype" value= "add"/>
 <button type="reset" class="btn btn-outline-success btn-lg">RESET</button>
-<p style = "font-size:30px ; color: red; font-family:Monospace" >
-${feedbackMessage}
-</p>
+
 </form>
 <p style="  padding :30px";>
 <hr>
